@@ -115,5 +115,5 @@ Defina a licença do projeto antes de publicar (por exemplo, MIT) e adicione o a
 ## Autor
 
 **Waliston Euripedes**
-Universidade Federal de Santa Maria, Curso de Ciências Econômicas
+Universidade Federal de Santa Maria, Curso de Sistemas de Informação
 Disciplina: Custos A, Profª. Eduarda Grasel Stieler
