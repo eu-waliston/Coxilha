@@ -1,731 +1,125 @@
-:root {
-    --malte: #1A1511;
-    --ambar: #E39B22;
-    --campo: #2F5F2B;
-    --limao: #C6DB4A;
-    --espuma: #FFF8E7;
-    --palha: #F1F4E4;
-    --tinta: #241C14;
-    --raio: 14px
-}
-
-* {
-    box-sizing: border-box
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 76px
-}
-
-body {
-    margin: 0;
-    font: 400 17px/1.65 Figtree, system-ui, sans-serif;
-    color: var(--tinta);
-    background: var(--palha)
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Bricolage Grotesque', Figtree, sans-serif;
-    line-height: 1.05;
-    margin: 0;
-    font-weight: 800
-}
-
-h2 {
-    font-size: clamp(32px, 4.4vw, 52px);
-    margin-bottom: 14px
-}
-
-h3 {
-    font-size: clamp(24px, 3vw, 34px);
-    margin-bottom: 12px
-}
-
-p {
-    margin: 0 0 16px
-}
-
-a {
-    color: inherit
-}
-
-:focus-visible {
-    outline: 3px solid var(--ambar);
-    outline-offset: 3px
-}
-
-.cx {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 24px
-}
-
-.cx--estreito {
-    max-width: 780px
-}
-
-.lead {
-    font-size: 19px;
-    max-width: 620px;
-    opacity: .85
-}
-
-.btn {
-    display: inline-block;
-    min-height: 46px;
-    padding: 12px 24px;
-    border-radius: 999px;
-    border: 0;
-    font: 700 16px Figtree, sans-serif;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform .2s, box-shadow .2s
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
-}
-
-.btn--ambar {
-    background: var(--ambar);
-    color: var(--malte)
-}
-
-.btn--verde {
-    background: var(--campo);
-    color: #fff
-}
-
-.topo {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--malte);
-    color: var(--espuma)
-}
-
-.topo__in {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px
-}
-
-.marca {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font: 800 26px 'Bricolage Grotesque', sans-serif
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    font-size: 15px;
-    font-weight: 500
-}
-
-.menu a:not(.btn) {
-    text-decoration: none;
-    opacity: .85
-}
-
-.menu a:not(.btn):hover {
-    opacity: 1;
-    text-decoration: underline;
-    text-underline-offset: 6px
-}
-
-.menu .btn {
-    min-height: 42px;
-    padding: 9px 20px
-}
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: 2px solid var(--espuma);
-    color: var(--espuma);
-    border-radius: 999px;
-    padding: 8px 18px;
-    font: 700 15px Figtree, sans-serif;
-    cursor: pointer
-}
-
-.hero {
-    position: relative;
-    background: var(--malte);
-    color: var(--espuma);
-    padding-top: 56px;
-    overflow: hidden
-}
-
-.hero__titulo {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 24px 32px;
-    text-align: center
-}
-
-.hero h1 {
-    font-size: clamp(40px, 7vw, 84px);
-    max-width: 900px;
-    margin: 0 auto 16px;
-    letter-spacing: -.02em
-}
-
-.hero__titulo p {
-    font-size: 20px;
-    max-width: 560px;
-    margin: 0 auto;
-    opacity: .85
-}
-
-.hero__lados {
-    display: flex;
-    min-height: 480px;
-    position: relative;
-    z-index: 1
-}
-
-.lado {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-    padding: 24px 24px 110px;
-    text-decoration: none;
-    color: var(--espuma);
-    transition: flex .6s cubic-bezier(.2, .7, .2, 1);
-    overflow: hidden
-}
-
-.lado:hover,
-.lado:focus-visible {
-    flex: 1.4
-}
-
-.lado--ipa {
-    background: radial-gradient(circle at 50% 70%, #6B3F0C 0, #2A1C0F 70%)
-}
-
-.lado--komb {
-    background: radial-gradient(circle at 50% 70%, #4E8A2E 0, #1F4A1C 70%)
-}
-
-.lado .garrafa {
-    height: 300px;
-    width: auto;
-    position: relative;
-    z-index: 1;
-    filter: drop-shadow(0 18px 20px rgba(0, 0, 0, .45));
-    transition: transform .5s
-}
-
-.lado .garrafa--baixa {
-    height: 260px
-}
-
-.lado:hover .garrafa {
-    transform: translateY(-10px) rotate(-3deg)
-}
-
-.lado__txt {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    font-size: 16px;
-    max-width: 280px
-}
-
-.lado__txt strong {
-    display: block;
-    font: 800 26px 'Bricolage Grotesque', sans-serif;
-    margin-bottom: 4px
-}
-
-.lado__txt em {
-    display: block;
-    margin-top: 8px;
-    font-style: normal;
-    font-weight: 700;
-    color: var(--limao)
-}
-
-.lado--ipa .lado__txt em {
-    color: #F1C46A
-}
-
-.bolhas i {
-    position: absolute;
-    bottom: -20px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 248, 231, .5);
-    animation: sobe 7s linear infinite
-}
-
-.bolhas i:nth-child(1) {
-    left: 15%;
-    animation-delay: 0s
-}
-
-.bolhas i:nth-child(2) {
-    left: 32%;
-    animation-delay: 2s;
-    width: 16px;
-    height: 16px
-}
-
-.bolhas i:nth-child(3) {
-    left: 50%;
-    animation-delay: 4s
-}
-
-.bolhas i:nth-child(4) {
-    left: 68%;
-    animation-delay: 1s;
-    width: 14px;
-    height: 14px
-}
-
-.bolhas i:nth-child(5) {
-    left: 85%;
-    animation-delay: 3s
-}
-
-@keyframes sobe {
-    to {
-        transform: translateY(-520px);
-        opacity: 0
-    }
-}
-
-.colinas {
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 100px;
-    z-index: 2;
-    display: block
-}
-
-.bloco {
-    padding: 88px 0
-}
-
-.bloco--escuro {
-    background: var(--malte);
-    color: var(--espuma)
-}
-
-.bloco--palha {
-    background: #E4EAD0
-}
-
-.bloco--escuro .lead {
-    opacity: .8
-}
-
-.produto {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1160px;
-    margin: 48px auto 0;
-    border-radius: 24px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 20px 50px -20px rgba(26, 21, 17, .35)
-}
-
-.produto+.produto {
-    margin-top: 32px
-}
-
-.produto__arte {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 48px 24px 0;
-    min-height: 440px
-}
-
-.produto--ipa .produto__arte {
-    background: linear-gradient(160deg, #F0B544, #C97A0A)
-}
-
-.produto--komb .produto__arte {
-    background: linear-gradient(160deg, #C6DB4A, #4E8A2E);
-    order: 2
-}
-
-.produto__arte .garrafa {
-    height: 360px;
-    width: auto;
-    filter: drop-shadow(0 14px 14px rgba(0, 0, 0, .35));
-    margin-bottom: -6px
-}
-
-.produto__arte .garrafa--baixa {
-    height: 310px
-}
-
-.produto__info {
-    padding: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start
-}
-
-dl {
-    margin: 0
-}
-
-.produto dl {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 24px;
-    width: 100%;
-    margin: 8px 0 20px
-}
-
-.produto dl div {
-    border-top: 1px solid #D9D3C0;
-    padding: 10px 0
-}
-
-dt {
-    font-size: 14px;
-    opacity: .7
-}
-
-dd {
-    margin: 0;
-    font-weight: 700
-}
-
-.preco {
-    font-size: 18px
-}
-
-.preco strong {
-    font: 800 34px 'Bricolage Grotesque', sans-serif;
-    color: #B8680A
-}
-
-.produto--komb .preco strong {
-    color: var(--campo)
-}
-
-.etapas {
-    list-style: none;
-    margin: 48px 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-    position: relative
-}
-
-.etapas::before {
-    content: "";
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    right: 24px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--ambar), var(--limao))
-}
-
-.etapas li {
-    position: relative
-}
-
-.etapas b {
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--ambar);
-    color: var(--malte);
-    font: 800 22px 'Bricolage Grotesque', sans-serif;
-    margin-bottom: 18px;
-    position: relative
-}
-
-.etapas li:nth-child(n+3) b {
-    background: var(--limao)
-}
-
-.etapas h3 {
-    font-size: 22px
-}
-
-.etapas p {
-    opacity: .8;
-    font-size: 16px
-}
-
-.abas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 28px 0 24px
-}
-
-.abas button {
-    min-height: 46px;
-    padding: 10px 22px;
-    border-radius: 999px;
-    border: 2px solid var(--malte);
-    background: transparent;
-    font: 700 16px Figtree, sans-serif;
-    color: var(--malte);
-    cursor: pointer;
-    transition: background .2s, color .2s
-}
-
-.abas button[aria-selected=true] {
-    background: var(--malte);
-    color: var(--espuma)
-}
-
-.painel {
-    max-width: 720px;
-    padding: 28px 32px;
-    background: #fff;
-    border-left: 6px solid var(--ambar);
-    border-radius: 0 var(--raio) var(--raio) 0;
-    font-size: 20px
-}
-
-.painel p {
-    margin: 0
-}
-
-details {
-    border-bottom: 1px solid #B9C2A0;
-    padding: 18px 0
-}
-
-summary {
-    cursor: pointer;
-    font: 700 20px Figtree, sans-serif;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px
-}
-
-summary::after {
-    content: "+";
-    font-size: 26px;
-    line-height: 1;
-    transition: transform .3s
-}
-
-details[open] summary::after {
-    transform: rotate(45deg)
-}
-
-details p {
-    margin: 12px 0 0;
-    max-width: 640px
-}
-
-.contato {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: start
-}
-
-.canais {
-    display: grid;
-    gap: 12px;
-    margin-top: 28px
-}
-
-.canais dd {
-    font-size: 20px;
-    color: var(--limao)
-}
-
-.canais dt {
-    opacity: .7
-}
-
-form {
-    background: #fff;
-    color: var(--tinta);
-    padding: 32px;
-    border-radius: 24px;
-    display: grid;
-    gap: 16px
-}
-
-label {
-    display: grid;
-    gap: 6px;
-    font-weight: 700;
-    font-size: 15px
-}
-
-input,
-select,
-textarea {
-    font: 400 17px Figtree, sans-serif;
-    padding: 12px 14px;
-    border: 2px solid #CFC9B6;
-    border-radius: 10px;
-    background: #FBFAF4;
-    color: var(--tinta);
-    width: 100%
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--campo);
-    outline: 0
-}
-
-input.erro {
-    border-color: #B3261E
-}
-
-#status {
-    margin: 0;
-    font-weight: 700;
-    min-height: 1.4em
-}
-
-#status.erro {
-    color: #B3261E
-}
-
-#status.ok {
-    color: var(--campo)
-}
-
-.rodape {
-    background: #0F0C09;
-    color: #CFC6AE;
-    padding: 32px 0;
-    font-size: 15px
-}
-
-.rodape__in {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px
-}
-
-@media(max-width:860px) {
-    .menu-btn {
-        display: block
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: var(--malte);
-        padding: 8px 24px 20px
-    }
-
-    .menu.aberto {
-        display: flex
-    }
-
-    .menu a {
-        padding: 12px 0
-    }
-
-    .menu .btn {
-        text-align: center;
-        margin-top: 8px
-    }
-
-    .hero__lados {
-        flex-direction: column
-    }
-
-    .lado,
-    .lado:hover {
-        flex: none;
-        padding-bottom: 70px
-    }
-
-    .produto,
-    .contato {
-        grid-template-columns: 1fr
-    }
-
-    .produto--komb .produto__arte {
-        order: 0
-    }
-
-    .produto__arte {
-        min-height: 380px
-    }
-
-    .produto__info {
-        padding: 32px 24px
-    }
-
-    .etapas {
-        grid-template-columns: 1fr 1fr
-    }
-
-    .etapas::before {
-        display: none
-    }
-
-    .bloco {
-        padding: 64px 0
-    }
-}
-
-@media(max-width:520px) {
-    .etapas {
-        grid-template-columns: 1fr
-    }
-
-    .produto dl {
-        grid-template-columns: 1fr
-    }
-}
-
-@media(prefers-reduced-motion:reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important
-    }
-}
+:root{--malte:#1A1511;--ambar:#E39B22;--campo:#2F5F2B;--limao:#C6DB4A;--espuma:#FFF8E7;--palha:#F1F4E4;--tinta:#241C14;--raio:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:400 17px/1.65 Figtree,system-ui,sans-serif;color:var(--tinta);background:var(--palha)}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.05;margin:0;font-weight:800}
+h2{font-size:clamp(32px,4.4vw,52px);margin-bottom:14px}
+h3{font-size:clamp(24px,3vw,34px);margin-bottom:12px}
+p{margin:0 0 16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
+.cx{max-width:1160px;margin:0 auto;padding:0 24px}
+.cx--estreito{max-width:780px}
+.lead{font-size:19px;max-width:620px;opacity:.85}
+
+.btn{display:inline-block;min-height:46px;padding:12px 24px;border-radius:999px;border:0;font:700 16px Figtree,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.btn--ambar{background:var(--ambar);color:var(--malte)}
+.btn--verde{background:var(--campo);color:#fff}
+
+.topo{position:sticky;top:0;z-index:20;background:var(--malte);color:var(--espuma)}
+.topo__in{max-width:1160px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 26px 'Bricolage Grotesque',sans-serif}
+.menu{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+.menu a:not(.btn){text-decoration:none;opacity:.85}
+.menu a:not(.btn):hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.menu .btn{min-height:42px;padding:9px 20px}
+.menu-btn{display:none;background:none;border:2px solid var(--espuma);color:var(--espuma);border-radius:999px;padding:8px 18px;font:700 15px Figtree,sans-serif;cursor:pointer}
+
+.hero{position:relative;background:var(--malte);color:var(--espuma);padding-top:56px;overflow:hidden}
+.hero__titulo{max-width:1160px;margin:0 auto;padding:0 24px 32px;text-align:center}
+.hero h1{font-size:clamp(40px,7vw,84px);max-width:900px;margin:0 auto 16px;letter-spacing:-.02em}
+.hero__titulo p{font-size:20px;max-width:560px;margin:0 auto;opacity:.85}
+.hero__lados{display:flex;min-height:480px;position:relative;z-index:1}
+.lado{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:20px;padding:24px 24px 110px;text-decoration:none;color:var(--espuma);transition:flex .6s cubic-bezier(.2,.7,.2,1);overflow:hidden}
+.lado:hover,.lado:focus-visible{flex:1.4}
+.lado--ipa{background:radial-gradient(circle at 50% 70%,#6B3F0C 0,#2A1C0F 70%)}
+.lado--komb{background:radial-gradient(circle at 50% 70%,#4E8A2E 0,#1F4A1C 70%)}
+.lado .garrafa{height:300px;width:auto;position:relative;z-index:1;filter:drop-shadow(0 18px 20px rgba(0,0,0,.45));transition:transform .5s}
+.lado .garrafa--baixa{height:260px}
+.lado:hover .garrafa{transform:translateY(-10px) rotate(-3deg)}
+.lado__txt{position:relative;z-index:1;text-align:center;font-size:16px;max-width:280px}
+.lado__txt strong{display:block;font:800 26px 'Bricolage Grotesque',sans-serif;margin-bottom:4px}
+.lado__txt em{display:block;margin-top:8px;font-style:normal;font-weight:700;color:var(--limao)}
+.lado--ipa .lado__txt em{color:#F1C46A}
+.bolhas i{position:absolute;bottom:-20px;width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,248,231,.5);animation:sobe 7s linear infinite}
+.bolhas i:nth-child(1){left:15%;animation-delay:0s}.bolhas i:nth-child(2){left:32%;animation-delay:2s;width:16px;height:16px}
+.bolhas i:nth-child(3){left:50%;animation-delay:4s}.bolhas i:nth-child(4){left:68%;animation-delay:1s;width:14px;height:14px}
+.bolhas i:nth-child(5){left:85%;animation-delay:3s}
+@keyframes sobe{to{transform:translateY(-520px);opacity:0}}
+.colinas{position:absolute;left:0;bottom:-1px;width:100%;height:100px;z-index:2;display:block}
+
+.bloco{padding:88px 0}
+.bloco--escuro{background:var(--malte);color:var(--espuma)}
+.bloco--palha{background:#E4EAD0}
+.bloco--escuro .lead{opacity:.8}
+
+.produto{display:grid;grid-template-columns:1fr 1fr;max-width:1160px;margin:48px auto 0;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 20px 50px -20px rgba(26,21,17,.35)}
+.produto + .produto{margin-top:32px}
+.produto__arte{display:flex;align-items:flex-end;justify-content:center;padding:48px 24px 0;min-height:440px}
+.produto--ipa .produto__arte{background:linear-gradient(160deg,#F0B544,#C97A0A)}
+.produto--komb .produto__arte{background:linear-gradient(160deg,#C6DB4A,#4E8A2E);order:2}
+.produto__arte .garrafa{height:360px;width:auto;filter:drop-shadow(0 14px 14px rgba(0,0,0,.35));margin-bottom:-6px}
+.produto__arte .garrafa--baixa{height:310px}
+.produto__info{padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+dl{margin:0}
+.produto dl{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;width:100%;margin:8px 0 20px}
+.produto dl div{border-top:1px solid #D9D3C0;padding:10px 0}
+dt{font-size:14px;opacity:.7}
+dd{margin:0;font-weight:700}
+.preco{font-size:18px}
+.preco strong{font:800 34px 'Bricolage Grotesque',sans-serif;color:#B8680A}
+.produto--komb .preco strong{color:var(--campo)}
+
+.etapas{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+.etapas::before{content:"";position:absolute;top:24px;left:24px;right:24px;height:2px;background:linear-gradient(90deg,var(--ambar),var(--limao))}
+.etapas li{position:relative}
+.etapas b{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--ambar);color:var(--malte);font:800 22px 'Bricolage Grotesque',sans-serif;margin-bottom:18px;position:relative}
+.etapas li:nth-child(n+3) b{background:var(--limao)}
+.etapas h3{font-size:22px}
+.etapas p{opacity:.8;font-size:16px}
+
+.abas{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 24px}
+.abas button{min-height:46px;padding:10px 22px;border-radius:999px;border:2px solid var(--malte);background:transparent;font:700 16px Figtree,sans-serif;color:var(--malte);cursor:pointer;transition:background .2s,color .2s}
+.abas button[aria-selected=true]{background:var(--malte);color:var(--espuma)}
+.painel{max-width:720px;padding:28px 32px;background:#fff;border-left:6px solid var(--ambar);border-radius:0 var(--raio) var(--raio) 0;font-size:20px}
+.painel p{margin:0}
+
+details{border-bottom:1px solid #B9C2A0;padding:18px 0}
+summary{cursor:pointer;font:700 20px Figtree,sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-size:26px;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:12px 0 0;max-width:640px}
+
+.contato{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.canais{display:grid;gap:12px;margin-top:28px}
+.canais dd{font-size:20px;color:var(--limao)}
+.canais dt{opacity:.7}
+form{background:#fff;color:var(--tinta);padding:32px;border-radius:24px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:700;font-size:15px}
+input,select,textarea{font:400 17px Figtree,sans-serif;padding:12px 14px;border:2px solid #CFC9B6;border-radius:10px;background:#FBFAF4;color:var(--tinta);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--campo);outline:0}
+input.erro{border-color:#B3261E}
+#status{margin:0;font-weight:700;min-height:1.4em}
+#status.erro{color:#B3261E}#status.ok{color:var(--campo)}
+
+.rodape{background:#0F0C09;color:#CFC6AE;padding:32px 0;font-size:15px}
+.rodape__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+
+@media(max-width:860px){
+.menu-btn{display:block}
+.menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--malte);padding:8px 24px 20px}
+.menu.aberto{display:flex}
+.menu a{padding:12px 0}
+.menu .btn{text-align:center;margin-top:8px}
+.hero__lados{flex-direction:column}
+.lado,.lado:hover{flex:none;padding-bottom:70px}
+.produto,.contato{grid-template-columns:1fr}
+.produto--komb .produto__arte{order:0}
+.produto__arte{min-height:380px}
+.produto__info{padding:32px 24px}
+.etapas{grid-template-columns:1fr 1fr}.etapas::before{display:none}
+.bloco{padding:64px 0}
+}
+@media(max-width:520px){.etapas{grid-template-columns:1fr}.produto dl{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
